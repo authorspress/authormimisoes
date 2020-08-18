@@ -1,0 +1,29 @@
+@import "./fonts.scss";
+@import "./color.scss";
+@import "./shadows.scss";
+@import "./breakpoints.scss";
+a {
+    text-decoration: none;
+}
+.purchase-links-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 16px;
+}
+
+.purchase-btn {
+    background-color: $primary500;
+    border: none;
+    margin: 8px;
+    padding: 8px;
+}
+
+.purchase-btn--styles {
+    border-radius: 8px;
+}
+
+.purchase-link--styles {
+    color: white;
+    font-family: $fontmain;
+    font-size: 12px;
+}

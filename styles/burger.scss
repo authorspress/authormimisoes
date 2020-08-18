@@ -1,0 +1,19 @@
+@import "../styles/fonts.scss";
+@import "../styles/color.scss";
+
+.burger-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 32px 0px 32px;
+}
+
+.burger-box {
+    width: 20px; 
+    height: 20px;
+    border: 2px solid red;
+}
+
+.author-name--styles {
+    font-family: $fontheader;
+    font-size: 36px;
+}

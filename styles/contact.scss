@@ -1,0 +1,26 @@
+@import "./fonts.scss";
+@import "./color.scss";
+@import "./breakpoints.scss";
+@import "./shadows.scss";
+
+.contact-container {
+    margin-top:400px;
+    width: 100%;
+    height: 500px;
+
+}
+
+.contact-container--styles {
+    background-color: $primary500;
+}
+
+.contact-title {
+    padding-top: 24px;
+    text-align: center;
+}
+
+.contact-title--styles {
+    font-family: $fontheader;
+    font-size: 32px;
+    color: white;
+}

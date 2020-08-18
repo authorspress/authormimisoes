@@ -1,0 +1,35 @@
+@import "./breakpoints.scss";
+@import "./color.scss";
+@import "./fonts.scss";
+@import "./shadows.scss";
+
+.about-author-container {
+    width: 100%;
+    height: 400px;
+}
+
+.about-author-title {
+    padding: 16px 0px 16px 42px;
+}
+
+.about-author-title--styles {
+    font-family: $fontheader;
+    font-size: 32px;
+}
+
+.author-img-container {
+    padding: 16px 0px 16px 42px;
+}
+
+.author-img {
+    width: 200px;
+}
+
+.author-synops-container {
+    padding: 16px 42px 16px 42px;
+}
+
+.author-synops--styles {
+    font-family: $fontmain;
+    line-height: 1.2;
+}
