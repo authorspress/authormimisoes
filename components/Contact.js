@@ -1,96 +1,20 @@
-import React, { useState } from 'react'
-
 import "../styles/contact.scss";
 
-export default function Contact() {
-    const [status, setStatus] = useState({
-        submitted: false,
-        submitting: false,
-        info: { error: false, msg: null }
-    })
-
-    const [inputs, setInputs] = useState({
-        email: '',
-        message: ''
-    })
-
-    const handleResponse = (status, msg) => {
-        if (status === 200) {
-            setStatus({
-                submitted: true,
-                submitting: false,
-                info: { error: false, msg: msg }
-            })
-            setInputs({
-                email: '',
-                message: ''
-            })
-        } else {
-            setStatus({
-                info: { error: true, msg: msg }
-            })
-        }
-    }
-
-    const handleOnChange = e => {
-        e.persist()
-        setInputs(prev => ({
-            ...prev,
-            [e.target.id]: e.target.value
-        }))
-        setStatus({
-            submitted: false,
-            submitting: false,
-            info: { error: false, msg: null }
-        })
-    }
-
-    const handleOnSubmit = async e => {
-        e.preventDefault()
-        setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
-        const res = await fetch('/api/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(inputs)
-        })
-        const text = await res.text()
-        handleResponse(res.status, text)
-    }
-
+export default function Contact(props) {
     return (
         <div className="contact-container contact-container--styles">
-            <form onSubmit={handleOnSubmit}>
-                <label htmlFor="email">Email</label>
-                <input
-                    id="email"
-                    type="email"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.email}
-                />
-                <label htmlFor="message">Message</label>
-                <textarea
-                    id="message"
-                    onChange={handleOnChange}
-                    required
-                    value={inputs.message}
-                />
-                <button type="submit" disabled={status.submitting}>
-                    {!status.submitting
-                        ? !status.submitted
-                            ? 'Submit'
-                            : 'Submitted'
-                        : 'Submitting...'}
-                </button>
-            </form>
-            {status.info.error && (
-                <div className="error">Error: {status.info.msg}</div>
-            )}
-            {!status.info.error && status.info.msg && (
-                <div className="success">{status.info.msg}</div>
-            )}
+        <form action="https://api.staticforms.xyz/submit" method="post">
+            <input type="hidden" name="accessKey" value="e44fc5d0-0b52-4cb1-9f79-fefc3800d89c" />
+            <input type="text" name="name" />
+            <input type="text" name="subject" />
+            <input type="text" name="email" /> 
+            <input type="text" name="phone" /> 
+            <textarea name="message"></textarea> 
+            <input type="text" name="replyTo" value="myreplytoemail@example.com" />
+            <input type="hidden" name="replyTo" value="@" />
+            <input type="hidden" name="redirectTo" value="https://example.com/contact/success" />
+            <input type="submit" value="Submit" />
+        </form>
         </div>
     )
 }

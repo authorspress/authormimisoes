@@ -1,19 +1,156 @@
-@import "../styles/fonts.scss";
 @import "../styles/color.scss";
+@import "../styles/breakpoints.scss";
+@import "../styles/fonts.scss";
+$duration: 0.5s;
 
-.burger-container {
+$size: 100%;
+$toggled-size: 0.75;
+
+$bg: white;
+$nav-bg: white;
+$content-bg: white;
+
+.bg-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 24px 32px 0px 32px;
+    position: relative;
+    @include media(">=tablet") {
+        padding: 32px 64px 0px 64px;
+    }
+    @include media(">=desktop") {
+        padding: 32px 156px 0px 156px;
+    }
+    @include media(">=LGdesktop") {
+        padding: 32px 348px 0px 348px;
+    }
 }
 
-.burger-box {
-    width: 20px; 
-    height: 20px;
-    border: 2px solid red;
+.burger-container {
+    background-color: $primary500;
+    border-radius: 150px;
+    
 }
-
 .author-name--styles {
     font-family: $fontheader;
     font-size: 36px;
+    @include media(">=tablet") {
+        font-size: 42px;
+    }
+    @include media(">=desktop") {
+        font-size: 56px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 72px;
+    }
 }
+
+.remove-bottom-radius {
+     border-radius: 8px 8px 0px 0px;
+}
+
+.keep-bottom-radius {
+    border-radius: 8px 8px 8px 8px;
+}
+
+.bg-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 62px;
+    background: white;
+}
+
+.burger {
+    outline: none;
+    margin-left: 0%;
+}
+
+.navicon-button {
+    display: inline-block;
+    position: relative;
+    padding: 32px 16px 32px 16px;
+    transition: $duration/2;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+
+    .navicon:before,
+    .navicon:after {
+        transition: $duration/2;
+    }
+
+    &:hover {
+        transition: $duration;
+        opacity: 1;
+
+        .navicon:before,
+        .navicon:after {
+            transition: $duration/2;
+        }
+
+        .navicon:before {
+            top: 0.825rem;
+        }
+
+        .navicon:after {
+            top: -0.825rem;
+        }
+    }
+}
+
+.navicon {
+    position: relative;
+    width: 2.5em;
+    height: 0.3125rem;
+    background: $content-bg;
+    transition: $duration;
+    border-radius: 2.5rem;
+
+    &:before,
+    &:after {
+        display: block;
+        content: "";
+        height: 0.3125rem;
+        width: 2.5rem;
+        background: $content-bg;
+        position: absolute;
+        transition: $duration $duration/2;
+        border-radius: 1rem;
+    }
+
+    &:before {
+        top: 0.625rem;
+    }
+
+    &:after {
+        top: -0.625rem;
+    }
+}
+
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {
+    top: 0 !important;
+}
+
+.open .navicon:before,
+.open .navicon:after {
+    transition: $duration;
+}
+
+.open.x {
+    .navicon {
+        background: transparent;
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+}
+

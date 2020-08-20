@@ -8,15 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.2.3",
     "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "framer-motion": "^2.5.1",
     "next": "9.5.2",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^1.4.0",
     "next-optimized-images": "^2.6.2",
     "node-sass": "^4.14.1",
+    "nodemailer": "^6.4.11",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"

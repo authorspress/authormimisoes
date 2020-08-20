@@ -1,0 +1,38 @@
+@import "./color.scss";
+@import "./fonts.scss";
+@import "./shadows.scss";
+
+.mobile-navbar-container {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    background: $primary400;
+    border-radius: 8px;
+    @include BoxShadow(8);
+    top: 112px;
+    left: 32px;
+}
+
+.mobile-link {
+    display: block;
+    padding: 20px;
+}
+
+.mobile-link--styles {
+    font-family: $fontmain;
+    color: white;
+}
+
+.reveal {
+    display: inline-block;
+    opacity: 0;
+    animation: fade 200ms ease-in forwards;
+}
+
+@keyframes fade {
+    0% {opacity: 0;
+        top: 116px;
+    }
+    100% {opacity: 1;
+        top:112px;}
+}

@@ -14,9 +14,9 @@ export default function Landing(props) {
 
                 </div>
                 <div className="landing-book">
-                    <img className="landing-book-img" src="/bitebook.jpg" alt="The bite book by Mimi Soes Cover" />
-                    <PurchaseLinks />
+                    <img className="landing-book-img" src="/bitebook.jpg" alt="The bite book by Mimi Soes Cover" />  
                 </div>
+                <PurchaseLinks />
             </div>
         </div>
     )

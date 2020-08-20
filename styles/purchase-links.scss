@@ -16,6 +16,15 @@ a {
     border: none;
     margin: 8px;
     padding: 8px;
+     @include media(">=tablet") {
+        padding: 12px;
+    }
+    @include media(">=desktop") {
+        padding: 16px;
+    }
+    @include media(">=LGdesktop") {
+        padding: 16px;
+    }
 }
 
 .purchase-btn--styles {
@@ -25,5 +34,14 @@ a {
 .purchase-link--styles {
     color: white;
     font-family: $fontmain;
-    font-size: 12px;
+    font-size: 16px;
+    @include media(">=tablet") {
+        font-size: 24px;
+    }
+    @include media(">=desktop") {
+        font-size: 32px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 36px;
+    }
 }
