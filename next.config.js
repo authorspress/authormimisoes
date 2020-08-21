@@ -16,7 +16,7 @@ module.exports = withPlugins(
         [
             withOptimizedImages,
             {
-                /* plugin config here ... */
+                optimizeImages: false,
 
             },
         ],

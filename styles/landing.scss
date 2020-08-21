@@ -21,6 +21,18 @@
 
 }
 
+.landing-grid {
+    @include media(">tablet") {
+    display: grid;
+    grid-template-columns: repeat(2, 456px);
+    margin: 0px 32px 0px 32px;
+    }
+    @include media(">=desktop") {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    }
+}
+
 .landing-book {
     padding: 64px 80px 0px 80px;
     display: flex;
@@ -31,7 +43,7 @@
 .landing-book-img {
     width: 256px;
     @include media(">=tablet") {
-        width: 456px;
+        width: 356px;
     }
     @include media(">=desktop") {
         width: 756px;

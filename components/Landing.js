@@ -3,20 +3,18 @@ import dynamic from "next/dynamic";
 import "../styles/landing.scss";
  
 const Burger = dynamic(() => import("./Burger"));
-const PurchaseLinks = dynamic(() => import("./PurchaseLinks"));
+const BookInfo = dynamic(() => import("./BookInfo"));
 
 export default function Landing(props) {
     return (
         <div className="landing-container landing-container--styles">
             <Burger />
             <div className="landing-grid">
-                <div className="landing-title-container">
-
-                </div>
+                <BookInfo />
                 <div className="landing-book">
                     <img className="landing-book-img" src="/bitebook.jpg" alt="The bite book by Mimi Soes Cover" />  
                 </div>
-                <PurchaseLinks />
+                
             </div>
         </div>
     )

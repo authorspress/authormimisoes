@@ -1,0 +1,91 @@
+@import "./breakpoints.scss";
+@import "./fonts.scss";
+@import "./color.scss";
+
+$fast: 2s;
+$slow: 12s;
+
+.book-info-container {
+    display: none;
+    @include media(">tablet"){
+        display: inline-block;
+        //border: 2px solid red;
+    }
+    @include media(">=desktop"){
+        display: inline-block;
+    }
+}
+
+.book-info-title-container {
+    margin: 64px 0px 0px 72px;    
+}
+
+.book-info-title--styles {
+    font-family: $fontheader;
+    font-size: 24px;
+}
+
+.author-info-title-container {
+    margin: 16px 0px 16px 72px;
+}
+
+.author-info-title--styles {
+    font-family: $fontmain;
+    font-size: 18x;
+    color: $secondary600;
+}
+
+.summary-info-container {
+    margin: 42px 0px 16px 72px;
+}
+
+.summary-info--styles {
+    font-family: $fontmain;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.purchase-info-title-container {
+    margin: 42px 0px 16px 72px;
+}
+
+.purchase-info-title--styles {
+    font-family: $fontmain;
+    font-size: 24px;
+}
+
+.circle-purchase-link-container {
+    //border: 2px solid blue;
+    display: inline-block;
+    position: relative;
+ }
+
+.circle-purchase-link {
+    width: 100px;
+    height: 100px;
+    animation: spin $slow infinite linear;
+    cursor: pointer;
+    //border: 2px solid red;
+}
+
+.circle-purchase-link:hover {
+    animation: spin $fast infinite linear;
+}
+
+.circle-purchase-link-title {
+    position: absolute;
+    top: 46px;
+    left: 26px;
+    cursor: pointer;
+}
+
+.circle-purchase-link-title--styles {
+    font-family: $fontheader;
+    font-size: 16px;
+    color: white;
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
