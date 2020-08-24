@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 import "../styles/book-info.scss"
 
-const CirclePurchaseLinks = dynamic(() => import("./CirclePurchaseLinks"));
+const PurchaseLinks = dynamic(() => import("./PurchaseLinks"));
 
 export default function BookInfo(props) {
     return (
@@ -32,7 +32,7 @@ export default function BookInfo(props) {
             </div>
 
             <div className="purchase-info-links-container">
-                <CirclePurchaseLinks />
+                <PurchaseLinks />
             </div>
         </div>
     )

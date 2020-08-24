@@ -54,38 +54,29 @@ $slow: 12s;
     font-size: 24px;
 }
 
-.circle-purchase-link-container {
-    //border: 2px solid blue;
+.purchase-info-links-container {
+    margin: 42px 0px 0px 72px;
+}
+
+.purchase-link-btn {
+    text-align: center;
+    width: 110px;
+    padding: 2px;
     display: inline-block;
     position: relative;
+    cursor: pointer;
  }
 
-.circle-purchase-link {
-    width: 100px;
-    height: 100px;
-    animation: spin $slow infinite linear;
-    cursor: pointer;
-    //border: 2px solid red;
+
+.purchase-link-btn--styles {
+    font-family: $fontmain;
+    font-size: 18px;
+     border: 2px solid $primary500;
+     transition: all 200ms ease-in-out;
 }
 
-.circle-purchase-link:hover {
-    animation: spin $fast infinite linear;
-}
-
-.circle-purchase-link-title {
-    position: absolute;
-    top: 46px;
-    left: 26px;
-    cursor: pointer;
-}
-
-.circle-purchase-link-title--styles {
-    font-family: $fontheader;
-    font-size: 16px;
+.purchase-link-btn--styles:hover {
+    transition: all 200ms ease-in-out;
     color: white;
-}
-
-@keyframes spin {
-    from {transform: rotate(0deg);}
-    to { transform: rotate(360deg);}
+    background: $primary500;
 }

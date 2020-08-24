@@ -21,6 +21,11 @@
 
 }
 
+.landing-info-flex {
+    display: flex;
+    justify-content: center;
+}
+
 .landing-grid {
     @include media(">tablet") {
     display: grid;
@@ -30,6 +35,7 @@
     @include media(">=desktop") {
     display: grid;
     grid-template-columns: repeat(2, 400px);
+    margin: 0px 32px 0px 32px;
     }
 }
 
