@@ -32,17 +32,70 @@ $content-bg: white;
     border-radius: 150px;
     
 }
+
+.author-name-container {
+    @include media(">=tablet") {
+        position: relative;
+    }
+}
+
+.circle-btn-container {
+    @include media("<tablet") {
+        display: none;
+    }
+    @include media(">=tablet") {
+        width: 256px;
+        height: 156px;
+        animation: rotateC 12s linear infinite;
+        cursor: pointer;
+    }
+
+    @include media(">=LGdesktop") {
+        width: 306px;
+        height: 206px;
+        animation: rotateC 18s linear infinite;
+        cursor: pointer;
+    }
+}
+
+@keyframes rotateC {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotateCC {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+}
+
+.author-name {
+    @include media(">=tablet") {
+    position: absolute;
+    top: 64px;
+    left: 67px;
+    }
+    @include media(">=LGdesktop") {
+    position: absolute;
+    top: 86px;
+    left: 70px;
+    }
+}
+
 .author-name--styles {
     font-family: $fontheader;
     font-size: 36px;
+    cursor: pointer;
     @include media(">=tablet") {
-        font-size: 42px;
+        font-size: 24px;
+        color: white;
     }
     @include media(">=desktop") {
-        font-size: 56px;
+        font-size: 24px;
+        color: white;
     }
     @include media(">=LGdesktop") {
-        font-size: 72px;
+        font-size: 32px;
+        color: white;
     }
 }
 

@@ -17,12 +17,18 @@ $slow: 12s;
 }
 
 .book-info-title-container {
-    margin: 64px 0px 0px 72px;    
+    margin: 64px 0px 0px 72px;
 }
 
 .book-info-title--styles {
     font-family: $fontheader;
     font-size: 24px;
+    @include media(">=desktop") {
+        font-size: 46px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 46px;
+    }
 }
 
 .author-info-title-container {
@@ -33,6 +39,12 @@ $slow: 12s;
     font-family: $fontmain;
     font-size: 18x;
     color: $secondary600;
+    @include media(">=desktop") {
+        font-size: 32px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 32px;
+    }
 }
 
 .summary-info-container {
@@ -43,6 +55,12 @@ $slow: 12s;
     font-family: $fontmain;
     font-weight: 400;
     line-height: 1.4;
+    @include media(">=desktop") {
+        font-size: 18px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 20px;
+    }
 }
 
 .purchase-info-title-container {
@@ -52,10 +70,30 @@ $slow: 12s;
 .purchase-info-title--styles {
     font-family: $fontmain;
     font-size: 24px;
+    @include media(">=desktop") {
+        font-size: 32px;
+    }
+    @include media(">=LGdesktop") {
+        font-size: 46px;
+    }
 }
 
 .purchase-info-links-container {
-    margin: 42px 0px 0px 72px;
+    margin: 40px 0px 0px 72px;
+    display: grid;
+    grid-template-columns: repeat(3, 130px);
+    justify-content: cneter;
+    align-items: center;
+    @include media("<tablet") {
+        grid-template-columns: repeat(1, 130px);
+        margin: 40px 0px 0px 0px;
+    }
+
+    @include media(">=desktop") {
+        grid-template-columns: repeat(3, 200px);
+        justify-content: cneter;
+        align-items: center;
+    }
 }
 
 .purchase-link-btn {
@@ -65,6 +103,9 @@ $slow: 12s;
     display: inline-block;
     position: relative;
     cursor: pointer;
+    @include media(">=LGdesktop") {
+        width: 150px;
+    }
  }
 
 
@@ -73,6 +114,9 @@ $slow: 12s;
     font-size: 18px;
      border: 2px solid $primary500;
      transition: all 200ms ease-in-out;
+     @include media(">=LGdesktop") {
+         font-size: 24px;
+     }
 }
 
 .purchase-link-btn--styles:hover {
@@ -80,3 +124,23 @@ $slow: 12s;
     color: white;
     background: $primary500;
 }
+
+.available-container {
+    display: inline-block;
+    width: 10px;
+}
+
+.place-link {
+    display: inline-block;
+    @include media("<tablet") {
+        margin-bottom: 4px;
+    }
+}
+
+.place-img {
+        width: 120px;
+        display: inline-block;
+        @include media(">desktop") {
+            width: 150px;
+        }
+    }

@@ -1,6 +1,7 @@
 @import "./color.scss";
 @import "./fonts.scss";
 @import "./shadows.scss";
+@import "./breakpoints.scss";
 
 .mobile-navbar-container {
     display: none;
@@ -11,6 +12,15 @@
     @include BoxShadow(8);
     top: 112px;
     left: 32px;
+    @include media(">=tablet") {
+        top: 156px;
+        left: 156px;
+    }
+    @include media(">=LGdesktop") {
+        top: 178px;
+        left: 348px;
+    }
+    
 }
 
 .mobile-link {
@@ -20,6 +30,7 @@
 
 .mobile-link--styles {
     font-family: $fontmain;
+    text-decoration: none;
     color: white;
 }
 
@@ -27,6 +38,12 @@
     display: inline-block;
     opacity: 0;
     animation: fade 200ms ease-in forwards;
+    @include media(">=desktop") {
+        animation: fade2 200ms ease-in forwards;
+    }
+    @include media(">=LGdesktop") {
+        animation: fade3 200ms ease-in forwards;
+    }
 }
 
 @keyframes fade {
@@ -35,4 +52,20 @@
     }
     100% {opacity: 1;
         top:112px;}
+}
+
+@keyframes fade2 {
+    0% {opacity: 0;
+        top: 162px;
+    }
+    100% {opacity: 1;
+        top:156px;}
+}
+
+@keyframes fade3 {
+    0% {opacity: 0;
+        top: 174px;
+    }
+    100% {opacity: 1;
+        top:178px;}
 }

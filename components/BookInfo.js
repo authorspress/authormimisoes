@@ -1,10 +1,25 @@
 import dynamic from "next/dynamic";
 
 import "../styles/book-info.scss"
+import { useState } from "react";
 
 const PurchaseLinks = dynamic(() => import("./PurchaseLinks"));
 
 export default function BookInfo(props) {
+    const [amazonLinks, setamazonLinks] = useState({
+        link1: "Kindle",
+        link2: "Hardcover",
+        link3: "Paperback",
+    });
+
+    const [barnsLinks, setBarnsLinks] = useState({
+        link1: "Hardcover",
+        link2: "Paperback",
+        link3: "NOOK book",
+    });
+    
+    console.log(barnsLinks.link1);
+
     return (
         <div className="book-info-container">
             <div className="book-info-title-container">
@@ -27,13 +42,11 @@ export default function BookInfo(props) {
 
             <div className="purchase-info-title-container">
                 <h1 className="purchase-info-title purchase-info-title--styles">
-                    BUY THE BOOK ON AMAZON
+                    BOOK AVAILABLE HERE
                 </h1>
             </div>
 
-            <div className="purchase-info-links-container">
-                <PurchaseLinks />
-            </div>
+            <PurchaseLinks />
         </div>
     )
 }

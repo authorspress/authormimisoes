@@ -40,6 +40,12 @@ export default function Burger(props) {
                     </a>
                 </div>
                 <div className="author-name-container">
+                    <div className="circle-btn-container" style={{
+                        backgroundImage: "url(" + "/circle-btn.svg" + ")",
+                        backgroundPosition: "center",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                    }}></div>
                     <h1 className="author-name author-name--styles">Mimi Soes</h1>
                 </div>
                 <MobileNavbar state={burgerState.revealMenu} />

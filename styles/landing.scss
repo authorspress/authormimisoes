@@ -4,7 +4,7 @@
 
 .landing-container {
     width: 100%;
-    height: 800px;
+    height: 900px;
     @include media(">=tablet") {
         height: 900px;
     }
@@ -34,7 +34,12 @@
     }
     @include media(">=desktop") {
     display: grid;
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(2, 656px);
+    margin: 0px 86px 0px 86px;
+    }
+    @include media(">=LGdesktop") {
+    display: grid;
+    grid-template-columns: repeat(2, 900px);
     margin: 0px 32px 0px 32px;
     }
 }
@@ -52,9 +57,29 @@
         width: 356px;
     }
     @include media(">=desktop") {
-        width: 756px;
+        width: 556px;
     }
     @include media(">=LGdesktop") {
         width: 756px;
+    }
+}
+
+.book-available-here-title {
+    margin-top: 12px;
+    text-align: center;
+    @include media(">=phone") {
+        display: none;
+    }
+}
+
+.book-available-here-title--styles {
+    font-family: $fontmain;
+    font-size: 20px;
+}
+.mobile-purchase-info-links-container-flex {
+    display: flex;
+    justify-content: center;
+    @include media(">=tablet") {
+        display: none;
     }
 }
